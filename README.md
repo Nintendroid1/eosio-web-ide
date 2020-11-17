@@ -42,22 +42,9 @@ This will produce `patient.abi` and `patient.wasm`.
 Run this in a terminal:
 
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
-cleos create account eosio patient EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV
-cleos set code patient patient.wasm
-cleos set abi patient patient.abi
-=======
 cleos create account eosio hospital.vt EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV
 cleos set code hospital.vt patient.wasm
 cleos set abi hospital.vt patient.abi
->>>>>>> Code Compiles, Testing
-=======
-cleos create account eosio hospital.vt EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV
-cleos set code hospital.vt patient.wasm
-cleos set abi hospital.vt patient.abi
->>>>>>> naths99_dev
-
 ```
 or run
 ```
