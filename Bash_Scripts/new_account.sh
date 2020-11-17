@@ -10,10 +10,5 @@ var=`cat pub_key.txt`
 # User Account
 cleos create account eosio $1 ${var:47:53}
 
-<<<<<<< HEAD
-#Allows park.vt to do transactions for you
-cleos set account permission $1 active '{"threshold": 1, "keys":[{"key":"EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV", "weight":1}], "accounts":[{"permission":{"actor":"patient","permission":"eosio.code"},"weight":1}], "waits":[] }' owner -p $1
-=======
 #Allows hospital.vt to do transactions for you
 cleos set account permission $1 active '{"threshold": 1, "keys":[{"key":"EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV", "weight":1}], "accounts":[{"permission":{"actor":"hospital.vt","permission":"eosio.code"},"weight":1}], "waits":[] }' owner -p $1
->>>>>>> Code Compiles, Testing
