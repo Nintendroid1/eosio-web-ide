@@ -256,7 +256,8 @@ public:
                   std::string relationship,
                   std::string e_address,
                   std::string e_phone,
-                  std::string e_email) {
+                  std::string e_email,
+                  name primary) {
       //Ensures the account executing transaction has proper permissions
       require_auth(user);
       
@@ -283,7 +284,7 @@ public:
                 row.DOB = dob;
                 row.Contact_ID = addcontact(user, address, phone, email);
                 row.Emergency_ID = addem(user, emergency, relationship, e_address, e_phone, e_email);
-                row.Primary_ID = getMedicalID(user);
+                row.Primary_ID = getMedicalID(primary);
                 row.Vital_ID = addvital(user);
             });
             print("Patient: ",patient_name, " is created on: ", now());

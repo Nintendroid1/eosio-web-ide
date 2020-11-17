@@ -42,26 +42,49 @@ This will produce `patient.abi` and `patient.wasm`.
 Run this in a terminal:
 
 ```
+<<<<<<< HEAD
 cleos create account eosio patient EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV
 cleos set code patient patient.wasm
 cleos set abi patient patient.abi
+=======
+cleos create account eosio hospital.vt EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV
+cleos set code hospital.vt patient.wasm
+cleos set abi hospital.vt patient.abi
+>>>>>>> Code Compiles, Testing
 
+```
+or run
+```
+./Bash_Scripts/quick_start.sh
 ```
 
 ## Creating users and using the contract
 
 Run this in a terminal:
 ```
+./Bash_Scripts/create_wallet.sh [NAME]
+./Bash_Scripts/new_account.sh [NAME]
+```
+or
+
+```
 cleos create account eosio bob EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV
 cleos create account eosio jane EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV
-cleos push action patient addpatient '[patient, jane, "female", "01/01/2020", "123 Street", "555-555-5555", "janeD@gmail.com", "joe", "spouse", "123 Street", "314-159-2653","joeD@gmail.com"]' -p patient
+```
+```
+cleos push action hospital.vt addstaff '[hospital.vt, bob, "8am-5pm", "147 Eastwood", "123-456-7890", "bob_vance@gmail.com"]' -p hospital.vt
+cleos push action hospital.vt addpatient '[hospital.vt, jane, "female", "01/01/2020", "123 Street", "555-555-5555", "janeD@gmail.com", "joe", "spouse", "123 Street", "314-159-2653","joeD@gmail.com", bob]' -p hospital.vt -p bob
 ```
 
 ## Listing the messages
 
 Run this in a terminal:
 ```
-cleos get table patient '' patients
+cleos get table hospital.vt hospital.vt patients
+cleos get table hospital.vt hospital.vt contact
+cleos get table hospital.vt hospital.vt medical
+cleos get table hospital.vt hospital.vt vital
+
 
 ```
 
