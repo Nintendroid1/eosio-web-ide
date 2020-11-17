@@ -28,43 +28,57 @@ To open a terminal, use the Terminal drop-down menu in the IDE user interface.
 
 ## Building sample contract
 
-The source code for the sample smartcontract is at `contract/talk.cpp` within the IDE. To compile the contract, run this in a terminal:
+The source code for the sample smartcontract is at `contract/patient.cpp` within the IDE. To compile the contract, run this in a terminal:
 
 ```
-eosio-cpp contract/talk.cpp
+eosio-cpp contract/patient.cpp
 
 ```
 
-This will produce `talk.abi` and `talk.wasm`.
+This will produce `patient.abi` and `patient.wasm`.
 
 ## Installing the contract
 
 Run this in a terminal:
 
 ```
-cleos create account eosio talk EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV
-cleos set code talk talk.wasm
-cleos set abi talk talk.abi
+cleos create account eosio hospital.vt EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV
+cleos set code hospital.vt patient.wasm
+cleos set abi hospital.vt patient.abi
 
+```
+or run
+```
+./Bash_Scripts/quick_start.sh
 ```
 
 ## Creating users and using the contract
 
 Run this in a terminal:
 ```
+./Bash_Scripts/create_wallet.sh [NAME]
+./Bash_Scripts/new_account.sh [NAME]
+```
+or
+
+```
 cleos create account eosio bob EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV
 cleos create account eosio jane EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV
-cleos push action talk post '[1000, 0, bob, "This is a new post"]' -p bob
-cleos push action talk post '[2000, 0, jane, "This is my first post"]' -p jane
-cleos push action talk post '[1001, 2000, bob, "Replying to your post"]' -p bob
-
+```
+```
+cleos push action hospital.vt addstaff '[hospital.vt, bob, "8am-5pm", "147 Eastwood", "123-456-7890", "bob_vance@gmail.com"]' -p hospital.vt
+cleos push action hospital.vt addpatient '[hospital.vt, jane, "female", "01/01/2020", "123 Street", "555-555-5555", "janeD@gmail.com", "joe", "spouse", "123 Street", "314-159-2653","joeD@gmail.com", bob]' -p hospital.vt -p bob
 ```
 
 ## Listing the messages
 
 Run this in a terminal:
 ```
-cleos get table talk '' message
+cleos get table hospital.vt hospital.vt patients
+cleos get table hospital.vt hospital.vt contact
+cleos get table hospital.vt hospital.vt medical
+cleos get table hospital.vt hospital.vt vital
+
 
 ```
 
