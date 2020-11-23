@@ -1,70 +1,17 @@
 USE HospitalVT
 
-CREATE TABLE [Vitals] (
-  [Vital_ID] int,
-  [BodyTemp] float,
-  [PulseRate] float,
-  [RespirationRate] float,
-  [BloodPressure] float,
-  [LastModified] date,
-  PRIMARY KEY ([Vital_ID])
-);
+CREATE TABLE Vitals (Vital_ID INT, BodyTemp FLOAT, PulseRate FLOAT, RespirationRate FLOAT, BloodPressure FLOAT, LastModified date, PRIMARY KEY (Vital_ID));
 
-CREATE TABLE [MedicalPro] (
-  [Admin_ID] int,
-  [Name] varchar(50),
-  [Hours] varchar(50),
-  [Contact_ID] int,
-  PRIMARY KEY ([Admin_ID])
-);
+CREATE TABLE MedicalPro (Admin_ID INT, Name VARCHAR(50), Hours VARCHAR(50), Contact_ID INT, PRIMARY KEY (Admin_ID));
 
-CREATE TABLE [SignIn] (
-  [Sign_ID] int,
-  [Patient_ID] int,
-  [Location_ID] int,
-  [Sign_Date] datetime,
-  PRIMARY KEY ([Sign_ID])
-);
+CREATE TABLE SignIn (Sign_ID INT,Patient_ID INT, Location_ID INT, Sign_Date datetime, PRIMARY KEY (Sign_ID));
 
-CREATE TABLE [ContactInfo] (
-  [Contact_ID] Type,
-  [Address] varchar(50),
-  [Phone] varchar(10),
-  [Email] varchar(50),
-  PRIMARY KEY ([Contact_ID])
-);
+CREATE TABLE ContactInfo (Contact_ID INT, Address VARCHAR(50), Phone VARCHAR(10), Email VARCHAR(50), PRIMARY KEY (Contact_ID));
 
-CREATE TABLE [Location] (
-  [Location_ID] int,
-  [Name] varchar(50),
-  [Room] varchar(50),
-  [Address] varchar(50),
-  [Manager] int,
-  [CurrentOccupancy] int,
-  [Limit] int,
-  [Assignment] datetime,
-  [Patient_ID] int,
-  PRIMARY KEY ([Location_ID])
-);
+CREATE TABLE Location (Location_ID INT, Name VARCHAR(50), Room VARCHAR(50), Address VARCHAR(50), Manager INT, CurrentOccupancy INT, Limit INT, Assignment datetime, Patient_ID INT, PRIMARY KEY (Location_ID));
 
-CREATE TABLE [Emergency] (
-  [Emergency_ID] int,
-  [Name] varchar(50),
-  [Relationship] varchar(50),
-  [Contact_ID] int,
-  PRIMARY KEY ([Emergency_ID])
-);
+CREATE TABLE Emergency (Emergency_ID INT, Name VARCHAR(50), Relationship VARCHAR(50), Contact_ID INT, PRIMARY KEY (Emergency_ID));
 
-CREATE TABLE [Patient] (
-  [Patient_ID] int,
-  [Name] varchar(50),
-  [Gender] varchar(50),
-  [DOB] date,
-  [Contact_ID] int,
-  [Emergency_ID] int,
-  [Primary_ID] int,
-  [Vital_ID] int,
-  PRIMARY KEY ([Patient_ID])
-);
+CREATE TABLE Patient (Patient_ID INT, Name VARCHAR(50), Gender VARCHAR(50), DOB date, Contact_ID INT, Emergency_ID INT, Primary_ID INT, Vital_ID INT, PRIMARY KEY (Patient_ID));
 
-
+GO
