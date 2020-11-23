@@ -1,3 +1,5 @@
+USE HospitalVT
+
 CREATE TABLE [Vitals] (
   [Vital_ID] int,
   [BodyTemp] float,
