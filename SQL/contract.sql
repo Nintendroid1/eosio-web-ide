@@ -1,4 +1,4 @@
-USE HospitalVT
+--USE HospitalVT
 
 CREATE PROCEDURE addcontact (@user VARCHAR(50),
 				@address VARCHAR(50), 
@@ -7,12 +7,13 @@ CREATE PROCEDURE addcontact (@user VARCHAR(50),
    AS  
    BEGIN
 
-      INSERT Patient (Address, Phone, Email)
+      INSERT ContactInfo (Address, Phone, Email)
 		VALUES (@address, @phone, @email)
 	  
 	  PRINT 'Contact is created.'
    END
-   
+GO
+
 CREATE PROCEDURE addem (@user VARCHAR(50),
 				@emergency VARCHAR(50),
 				@relationship VARCHAR(50),
@@ -29,7 +30,7 @@ CREATE PROCEDURE addem (@user VARCHAR(50),
 	  
 	  PRINT 'Emergency contact is created.' 
    END  
- 
+GO 
 
 CREATE PROCEDURE addstaff (@user VARCHAR(50),
 				@primary VARCHAR(50),
@@ -47,7 +48,7 @@ CREATE PROCEDURE addstaff (@user VARCHAR(50),
 	  
 	  PRINT 'Primary contact is created.'  
    END  
- 
+GO
 
 CREATE PROCEDURE addvital (@user VARCHAR(50))
    AS  
@@ -58,7 +59,7 @@ CREATE PROCEDURE addvital (@user VARCHAR(50))
 	  
 	  PRINT 'Vitals are created.'  
    END  
- 
+GO
 
 CREATE PROCEDURE addpatient (@user VARCHAR(50),
 				@name VARCHAR(50), 

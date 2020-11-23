@@ -1,3 +1,3 @@
 USE HospitalVT
-SELECT * from Information_schema.tables
+SELECT Table_Name from Information_schema.tables
 GO
