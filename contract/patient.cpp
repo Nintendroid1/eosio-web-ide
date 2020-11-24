@@ -345,17 +345,41 @@ public:
       }
   }
 
-  // //Erases parking spot 
-  // [[eosio::action]]
-  // void clear(name user) {
-  //   require_auth(user);
+  //Erases entire blockchain for testing purposes
+  [[eosio::action]]
+  void clear(name user) {
+    require_auth(user);
 
-  //   park_index patient(get_self(), get_first_receiver().value);
-  //   auto it = patient.begin();
-  //   while (it != patient.end()) {
-  //       it = patient.erase(it);
-  //   }
-  // }
+    patients_index patient(get_self(), get_first_receiver().value);
+    auto it = patient.begin();
+    while (it != patient.end()) {
+        it = patient.erase(it);
+    }
+    
+    medical_index staff(get_self(), get_first_receiver().value);
+    auto it = staff.begin();
+    while (it != staff.end()) {
+        it = staff.erase(it);
+    }
+    
+    emergency_index emergencycard(get_self(), get_first_receiver().value);
+    auto it = emergencycard.begin();
+    while (it != emergencycard.end()) {
+        it = emergencycard.erase(it);
+    }
+    
+    contact_index addressbook(get_self(), get_first_receiver().value);
+    auto it = addressbook.begin();
+    while (it != addressbook.end()) {
+        it = addressbook.erase(it);
+    }
+    
+    vital_index monitor(get_self(), get_first_receiver().value);
+    auto it = monitor.begin();
+    while (it != monitor.end()) {
+        it = monitor.erase(it);
+    }
+  }
  
   //Returns the MedicalID of a user
   uint64_t getMedicalID(name user) {
