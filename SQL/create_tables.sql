@@ -6,7 +6,7 @@ CREATE TABLE MedicalPro (Admin_ID INT NOT NULL IDENTITY(1,1), Name VARCHAR(50), 
 
 CREATE TABLE SignIn (Sign_ID INT NOT NULL IDENTITY(1,1), Patient_ID INT, Location_ID INT, Sign_Date datetime, PRIMARY KEY (Sign_ID));
 
-CREATE TABLE ContactInfo (Contact_ID INT NOT NULL IDENTITY(1,1), Address VARCHAR(50), Phone VARCHAR(10), Email VARCHAR(50), PRIMARY KEY (Contact_ID));
+CREATE TABLE ContactInfo (Contact_ID INT NOT NULL IDENTITY(1,1), Address VARCHAR(50), Phone VARCHAR(12), Email VARCHAR(50), PRIMARY KEY (Contact_ID));
 
 CREATE TABLE Location (Location_ID INT NOT NULL IDENTITY(1,1), Name VARCHAR(50), Room VARCHAR(50), Address VARCHAR(50), Manager INT, CurrentOccupancy INT, Limit INT, Assignment datetime, Patient_ID INT, PRIMARY KEY (Location_ID));
 
