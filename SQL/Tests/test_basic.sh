@@ -9,6 +9,6 @@
 ../execute_sql.sh ../contract.sql
 
 # Insertion
-#../execute_sql.sh insert_basic.sql
+../execute_sql.sh insert_basic.sql
 
 # Output
