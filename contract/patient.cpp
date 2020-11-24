@@ -355,30 +355,6 @@ public:
     while (it != patient.end()) {
         it = patient.erase(it);
     }
-    
-    medical_index staff(get_self(), get_first_receiver().value);
-    auto it = staff.begin();
-    while (it != staff.end()) {
-        it = staff.erase(it);
-    }
-    
-    emergency_index emergencycard(get_self(), get_first_receiver().value);
-    auto it = emergencycard.begin();
-    while (it != emergencycard.end()) {
-        it = emergencycard.erase(it);
-    }
-    
-    contact_index addressbook(get_self(), get_first_receiver().value);
-    auto it = addressbook.begin();
-    while (it != addressbook.end()) {
-        it = addressbook.erase(it);
-    }
-    
-    vital_index monitor(get_self(), get_first_receiver().value);
-    auto it = monitor.begin();
-    while (it != monitor.end()) {
-        it = monitor.erase(it);
-    }
   }
  
   //Returns the MedicalID of a user
@@ -423,10 +399,16 @@ public:
           print("DOES NOT EXIST! Patient: ", patient_name);
       }
       else {
-          erase_contact(user, iterator->Contact_ID);
-          erase_emergency(user, iterator->Emergency_ID);
-          erase_vital(user, iterator->Vital_ID);
-          secpatient.erase(iterator);
+          vital_index monitor(get_self(), get_first_receiver().value);  
+          auto entry = monitor.find(iterator->Vital_ID);
+          
+          monitor.modify(entry, user, [&](auto& row) {
+             row.BodyTemp = newBodyTemp;
+             row.PulseRate = newPulseRate;
+             row.RespirationRate = newRespirationRate;
+             row.BloodPressure = newBloodPressure;
+             row.LastModified = now();
+             });
           print("UPDATED Patient Vitals: Body Temp: ", newBodyTemp, "\nPulse Rate: ", newPulseRate , "\nRespiration Rate: ", newRespirationRate, "\nBlood Pressure: ", newBloodPressure, "\non: ", now());
           send_summary(user, " successfully updated patient vitals");
       }

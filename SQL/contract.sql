@@ -1,4 +1,4 @@
-DROP PROCEDURE IF EXISTS addcontact, addem, addstaff, addvital, addpatient
+DROP PROCEDURE IF EXISTS addcontact, addem, addstaff, addvital, addpatient, modvital
 GO
 
 CREATE PROCEDURE addcontact (@user VARCHAR(50),
@@ -97,3 +97,22 @@ CREATE PROCEDURE addpatient (@user VARCHAR(50),
    END  
 GO
 
+CREATE PROCEDURE modvital(@user VARCHAR(50),
+                @name VARCHAR(50),
+                @newbodytemp FLOAT,
+                @newpulserate FLOAT,
+                @newrespirationrate FLOAT,
+                @newbloodpressure FLOAT)
+        AS
+        BEGIN
+            DECLARE @vit_id INT
+            SET @vit_id = (SELECT Vital_ID from HospitalVT.dbo.Patient WHERE Name=@name)
+            
+            UPDATE Vitals
+            SET BodyTemp=@newbodytemp, PulseRate=@newpulserate, RespirationRate=@newrespirationrate, BloodPressure=@newbloodpressure, LastModified=CURRENT_TIMESTAMP
+            WHERE Vital_ID=@vit_id
+            
+            PRINT 'Vitals updated ' + CURRENT_TIMESTAMP
+        END
+             
+GO
