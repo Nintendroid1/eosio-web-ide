@@ -1,11 +1,11 @@
 #!/bin/bash
-cleos push action hospital.vt delpatient '[hospital.vt,donnicatteri]' -p hospital.vt 
-cleos push action hospital.vt delpatient '[hospital.vt,letitiaserra]' -p hospital.vt 
-cleos push action hospital.vt delpatient '[hospital.vt,watbaldi]' -p hospital.vt 
-cleos push action hospital.vt delpatient '[hospital.vt,kellyloins]' -p hospital.vt 
-cleos push action hospital.vt delpatient '[hospital.vt,algernonbran]' -p hospital.vt 
+cleos push action hospital.vt delpatient '[hospital.vt,loriannewane]' -p hospital.vt 
+cleos push action hospital.vt delpatient '[hospital.vt,alonzojemiso]' -p hospital.vt 
+cleos push action hospital.vt delpatient '[hospital.vt,annitirrell]' -p hospital.vt 
+cleos push action hospital.vt delpatient '[hospital.vt,candigheerha]' -p hospital.vt 
+cleos push action hospital.vt delpatient '[hospital.vt,tedblaydon]' -p hospital.vt 
 cleos push action hospital.vt delpatient '[hospital.vt,michelewille]' -p hospital.vt 
-cleos push action hospital.vt delpatient '[hospital.vt,violanteanto]' -p hospital.vt 
-cleos push action hospital.vt delpatient '[hospital.vt,iveodonohue]' -p hospital.vt 
-cleos push action hospital.vt delpatient '[hospital.vt,tremaineedri]' -p hospital.vt 
-cleos push action hospital.vt delpatient '[hospital.vt,rafaelllegru]' -p hospital.vt 
+cleos push action hospital.vt delpatient '[hospital.vt,cosmodripps]' -p hospital.vt 
+cleos push action hospital.vt delpatient '[hospital.vt,georgianaker]' -p hospital.vt 
+cleos push action hospital.vt delpatient '[hospital.vt,blondellshir]' -p hospital.vt 
+cleos push action hospital.vt delpatient '[hospital.vt,jocelinbaudr]' -p hospital.vt 

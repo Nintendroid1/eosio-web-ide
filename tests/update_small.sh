@@ -1,11 +1,11 @@
 #!/bin/bash
-cleos push action hospital.vt modvital '[hospital.vt,mellisentwoo,99.38708292066566, 64.30794159417613, 13.033869913512229, 86.40038045813482]' -p hospital.vt 
-cleos push action hospital.vt modvital '[hospital.vt,pavlaspyking,97.84429410713885, 74.84558979720772, 14.397362755659254, 100.26583177815438]' -p hospital.vt 
-cleos push action hospital.vt modvital '[hospital.vt,aubreychuck,98.9910008709298, 69.58513290835542, 16.938623907530705, 139.58314019534313]' -p hospital.vt 
-cleos push action hospital.vt modvital '[hospital.vt,teriannvila,100.91943872509108, 88.40486831113924, 13.318330914517446, 135.81806402226908]' -p hospital.vt 
-cleos push action hospital.vt modvital '[hospital.vt,sharaislewco,100.95427543552476, 88.11679804280408, 14.36770008481853, 100.69421619030142]' -p hospital.vt 
-cleos push action hospital.vt modvital '[hospital.vt,jackiechella,98.45896121813823, 91.56031049813248, 14.078155644846394, 89.34416818120127]' -p hospital.vt 
-cleos push action hospital.vt modvital '[hospital.vt,rowlandmerck,97.04806604401338, 77.74943507468411, 16.82262352215433, 100.58057911267181]' -p hospital.vt 
-cleos push action hospital.vt modvital '[hospital.vt,marylouscull,98.59182595913714, 76.6077941732361, 11.823857069862964, 123.19740492694399]' -p hospital.vt 
-cleos push action hospital.vt modvital '[hospital.vt,tedblaydon,100.21812856319681, 61.38695030156135, 10.119336294381712, 137.19515747724893]' -p hospital.vt 
-cleos push action hospital.vt modvital '[hospital.vt,claretabrida,97.80982702523792, 96.74260386124217, 15.403747404004474, 118.65288263700839]' -p hospital.vt 
+cleos push action hospital.vt modvital '[hospital.vt,skyejonke,99.47477854060628, 79.29598181956439, 10.284804595738798, 100.76047431670801]' -p hospital.vt 
+cleos push action hospital.vt modvital '[hospital.vt,maryjofranki,99.12013423760361, 80.77620613530652, 15.861280526493465, 111.22690518218492]' -p hospital.vt 
+cleos push action hospital.vt modvital '[hospital.vt,gerladinakee,98.42999569177219, 87.25856395740843, 12.657484511710063, 95.81970855140986]' -p hospital.vt 
+cleos push action hospital.vt modvital '[hospital.vt,brynaferreo,97.4869981227545, 84.35742412359367, 13.666943545341315, 113.06017753967191]' -p hospital.vt 
+cleos push action hospital.vt modvital '[hospital.vt,garrardrafte,97.22454155266877, 95.4856526251125, 13.706734050558934, 81.93568980997007]' -p hospital.vt 
+cleos push action hospital.vt modvital '[hospital.vt,collypendrid,100.9786751604851, 79.38167072937523, 11.74287348507494, 88.31781370026546]' -p hospital.vt 
+cleos push action hospital.vt modvital '[hospital.vt,haroungligor,97.04646243258699, 71.74032878849832, 10.065187740199587, 88.39087161222702]' -p hospital.vt 
+cleos push action hospital.vt modvital '[hospital.vt,rudienormanv,98.37988604425072, 73.50524028267367, 12.115695105248758, 110.58876868478276]' -p hospital.vt 
+cleos push action hospital.vt modvital '[hospital.vt,lanarothchil,98.86034085725954, 62.79088625972582, 11.510006104322171, 111.70912888439572]' -p hospital.vt 
+cleos push action hospital.vt modvital '[hospital.vt,lymanwand,97.29889225782057, 78.86266267461302, 14.49973363647366, 97.88988059787405]' -p hospital.vt 
