@@ -391,22 +391,9 @@ public:
         it4 = emergencycard.erase(it4);
     }
   }
-  
-    //Erases entire blockchain for testing purposes
+
   [[eosio::action]]
   void clearcon(name user) {
-    require_auth(user);
-    
-    contact_index addressbook(get_self(), get_first_receiver().value);
-    auto it5 = addressbook.begin();
-    if (it5 != addressbook.end()) {
-        it5 = addressbook.erase(it5);
-    }
-
-  }
-
-  [[eosio::action]]
-  void clearcall(name user) {
     require_auth(user);
 
     contact_index addressbook(get_self(), get_first_receiver().value);
@@ -414,6 +401,43 @@ public:
     while (it5 != addressbook.end()) {
         it5 = addressbook.erase(it5);
     }
+  }
+  
+   //Erases entire blockchain for testing purposes
+  [[eosio::action]]
+  void clearall(name user) {
+    require_auth(user);
+    
+    patients_index patient(get_self(), get_first_receiver().value);
+    auto it = patient.begin();
+    if (it != patient.end()) {
+        it = patient.erase(it);
+    }
+    
+    vital_index monitor(get_self(), get_first_receiver().value);
+    auto it2 = monitor.begin();
+    if (it2 != monitor.end()) {
+        it2 = monitor.erase(it2);
+    }
+    
+    medical_index staff(get_self(), get_first_receiver().value);
+    auto it3 = staff.begin();
+    if (it3 != staff.end()) {
+        it3 = staff.erase(it3);
+    }
+    
+    emergency_index emergencycard(get_self(), get_first_receiver().value);
+    auto it4 = emergencycard.begin();
+    if (it4 != emergencycard.end()) {
+        it4 = emergencycard.erase(it4);
+    }
+    
+    contact_index addressbook(get_self(), get_first_receiver().value);
+    auto it5 = addressbook.begin();
+    if (it5 != addressbook.end()) {
+        it5 = addressbook.erase(it5);
+    }
+
   }
 
  
