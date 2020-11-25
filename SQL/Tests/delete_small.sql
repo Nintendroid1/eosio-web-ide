@@ -1,20 +1,20 @@
-EXEC modvital "hospital.vt","Zacharias Shilito"
+EXEC delpatient "hospital.vt","Brendin Pettersen"
 GO
-EXEC modvital "hospital.vt","Buckie Cameli"
+EXEC delpatient "hospital.vt","Grace Tracy"
 GO
-EXEC modvital "hospital.vt","Cece Harverson"
+EXEC delpatient "hospital.vt","Caterina Poyner"
 GO
-EXEC modvital "hospital.vt","Binky Antczak"
+EXEC delpatient "hospital.vt","Lyssa Butterfill"
 GO
-EXEC modvital "hospital.vt","Zilvia Giffen"
+EXEC delpatient "hospital.vt","Tris Kmietsch"
 GO
-EXEC modvital "hospital.vt","Jennifer Cushion"
+EXEC delpatient "hospital.vt","Sebastiano Keppy"
 GO
-EXEC modvital "hospital.vt","Robbin Cossans"
+EXEC delpatient "hospital.vt","Ellynn Relfe"
 GO
-EXEC modvital "hospital.vt","Niven Acreman"
+EXEC delpatient "hospital.vt","Beret Leathwood"
 GO
-EXEC modvital "hospital.vt","Maximo Dyott"
+EXEC delpatient "hospital.vt","Joann Ebrall"
 GO
-EXEC modvital "hospital.vt","Nicky Furney"
+EXEC delpatient "hospital.vt","Rodolphe Blachford"
 GO
