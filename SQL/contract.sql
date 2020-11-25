@@ -1,4 +1,4 @@
-DROP PROCEDURE IF EXISTS addcontact, addem, addstaff, addvital, addpatient, modvital
+DROP PROCEDURE IF EXISTS addcontact, addem, addstaff, addvital, addpatient, modvital, delpatient
 GO
 
 CREATE PROCEDURE addcontact (@user VARCHAR(50),
@@ -108,11 +108,24 @@ CREATE PROCEDURE modvital(@user VARCHAR(50),
             DECLARE @vit_id INT
             SET @vit_id = (SELECT Vital_ID from HospitalVT.dbo.Patient WHERE Name=@name)
             
-            UPDATE Vitals
+            UPDATE HospitalVT.dbo.Vitals
             SET BodyTemp=@newbodytemp, PulseRate=@newpulserate, RespirationRate=@newrespirationrate, BloodPressure=@newbloodpressure, LastModified=CURRENT_TIMESTAMP
             WHERE Vital_ID=@vit_id
             
-            PRINT 'Vitals updated ' + CURRENT_TIMESTAMP
+            PRINT 'Vitals updated'
         END
              
 GO
+
+CREATE PROCEDURE delpatient(@user VARCHAR(50),
+                @name VARCHAR(50))
+        AS
+        BEGIN
+           DELETE from HospitalVT.dbo.ContactInfo WHERE Contact_ID=(SELECT Contact_ID from HospitalVT.dbo.Patient WHERE Name=@name)
+           DELETE from HospitalVT.dbo.ContactInfo WHERE Contact_ID=(SELECT Contact_ID from HospitalVT.dbo.Emergency WHERE Emergency_ID=(SELECT Emergency_ID from HospitalVT.dbo.Patient WHERE Name=@name))
+           DELETE from HospitalVT.dbo.Emergency WHERE Emergency_ID=(SELECT Emergency_ID from HospitalVT.dbo.Patient WHERE Name=@name)
+           DELETE from HospitalVT.dbo.Vitals WHERE Vital_ID=(SELECT Vital_ID from HospitalVT.dbo.Patient WHERE Name=@name)
+           DELETE from HospitalVT.dbo.Patient WHERE Name=@name
+        END
+GO
+
