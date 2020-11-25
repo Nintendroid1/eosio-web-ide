@@ -347,7 +347,7 @@ public:
 
   //Erases entire blockchain for testing purposes
   [[eosio::action]]
-  void clear(name user) {
+  void clearpat(name user) {
     require_auth(user);
 
     patients_index patient(get_self(), get_first_receiver().value);
@@ -355,25 +355,48 @@ public:
     while (it != patient.end()) {
         it = patient.erase(it);
     }
+  }
+    //Erases entire blockchain for testing purposes
+  [[eosio::action]]
+  void clearvit(name user) {
+    require_auth(user);
 
     vital_index monitor(get_self(), get_first_receiver().value);
     auto it2 = monitor.begin();
     while (it2 != monitor.end()) {
         it2 = monitor.erase(it2);
     }
+  }
+  
+    //Erases entire blockchain for testing purposes
+  [[eosio::action]]
+  void clearmed(name user) {
+    require_auth(user);
 
     medical_index staff(get_self(), get_first_receiver().value);
     auto it3 = staff.begin();
     while (it3 != staff.end()) {
         it3 = staff.erase(it3);
     }
-
+  }
+  
+    //Erases entire blockchain for testing purposes
+  [[eosio::action]]
+  void clearem(name user) {
+    require_auth(user);
+    
     emergency_index emergencycard(get_self(), get_first_receiver().value);
     auto it4 = emergencycard.begin();
     while (it4 != emergencycard.end()) {
         it4 = emergencycard.erase(it4);
     }
-
+  }
+  
+    //Erases entire blockchain for testing purposes
+  [[eosio::action]]
+  void clearcon(name user) {
+    require_auth(user);
+    
     contact_index addressbook(get_self(), get_first_receiver().value);
     auto it5 = addressbook.begin();
     while (it5 != addressbook.end()) {
