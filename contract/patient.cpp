@@ -159,8 +159,8 @@ public:
           row.Phone = phone;
           res_ID = row.Contact_ID;
       });
-      print("Contact is created on: ", now());
-      send_summary(user, " successfully inserted contact");
+      //print("Contact is created on: ", now());
+      //send_summary(user, " successfully inserted contact");
     return res_ID;
   }
 
@@ -186,8 +186,8 @@ public:
           row.Contact_ID = addcontact(user, e_address, e_phone, e_email);
           res_ID = row.Emergency_ID;
       });
-      print("Emergency contact is created on: ", now());
-      send_summary(user, " successfully inserted emergency contact");
+      //print("Emergency contact is created on: ", now());
+      //send_summary(user, " successfully inserted emergency contact");
     return res_ID;
   }
 
@@ -212,8 +212,8 @@ public:
           row.Contact_ID = addcontact(user, p_address, p_phone, p_email);
           res_ID = row.Admin_ID;
       });
-      print("Primary contact is created on: ", now());
-      send_summary(user, " successfully inserted primary contact");
+      //print("Primary contact is created on: ", now());
+      //send_summary(user, " successfully inserted primary contact");
     return res_ID;
   }
 
@@ -235,8 +235,8 @@ public:
           row.LastModified = now();
           res_ID = row.Vital_ID;
       });
-      print("Vitals created on: ", now());
-      send_summary(user, " successfully inserted vitals");
+      //print("Vitals created on: ", now());
+      //send_summary(user, " successfully inserted vitals");
     return res_ID;
   }
   
@@ -287,12 +287,12 @@ public:
                 row.Primary_ID = getMedicalID(primary);
                 row.Vital_ID = addvital(user);
             });
-            print("Patient: ",patient_name, " is created on: ", now());
-            send_summary(user, " successfully inserted patient");
+            //print("Patient: ",patient_name, " is created on: ", now());
+            //send_summary(user, " successfully inserted patient");
         }
         else {
               //The patient is in the table
-              print("ALREADY EXISTS! Patient: ", patient_name);
+              //print("ALREADY EXISTS! Patient: ", patient_name);
         }
   }
 
@@ -332,15 +332,15 @@ public:
     auto iterator = secpatient.find(key_int);
 
     if( iterator == secpatient.end() ) {
-          print("DOES NOT EXIST! Patient: ", patient_name);
+          //print("DOES NOT EXIST! Patient: ", patient_name);
       }
       else {
           erase_contact(user, iterator->Contact_ID);
           erase_emergency(user, iterator->Emergency_ID);
           erase_vital(user, iterator->Vital_ID);
           secpatient.erase(iterator);
-          print("REMOVED Patient: ", patient_name, "  on: ", now());
-          send_summary(user, " successfully removed patient");
+          //print("REMOVED Patient: ", patient_name, "  on: ", now());
+          //send_summary(user, " successfully removed patient");
 
       }
   }
@@ -399,11 +399,23 @@ public:
     
     contact_index addressbook(get_self(), get_first_receiver().value);
     auto it5 = addressbook.begin();
-    while (it5 != addressbook.end()) {
+    if (it5 != addressbook.end()) {
         it5 = addressbook.erase(it5);
     }
 
   }
+
+  [[eosio::action]]
+  void clearcall(name user) {
+    require_auth(user);
+
+    contact_index addressbook(get_self(), get_first_receiver().value);
+    auto it5 = addressbook.begin();
+    while (it5 != addressbook.end()) {
+        it5 = addressbook.erase(it5);
+    }
+  }
+
  
   //Returns the MedicalID of a user
   uint64_t getMedicalID(name user) {
@@ -457,8 +469,8 @@ public:
              row.BloodPressure = newBloodPressure;
              row.LastModified = now();
              });
-          print("UPDATED Patient Vitals: Body Temp: ", newBodyTemp, "\nPulse Rate: ", newPulseRate , "\nRespiration Rate: ", newRespirationRate, "\nBlood Pressure: ", newBloodPressure, "\non: ", now());
-          send_summary(user, " successfully updated patient vitals");
+          //print("UPDATED Patient Vitals: Body Temp: ", newBodyTemp, "\nPulse Rate: ", newPulseRate , "\nRespiration Rate: ", newRespirationRate, "\nBlood Pressure: ", newBloodPressure, "\non: ", now());
+          //send_summary(user, " successfully updated patient vitals");
       }
   }
 };
