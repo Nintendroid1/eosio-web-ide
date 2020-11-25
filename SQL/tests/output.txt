@@ -1,0 +1,85 @@
+./tester.sh: line 7: ../execute_sql: No such file or directory
+
+real	0m0.000s
+user	0m0.000s
+sys	0m0.000s
+./tester.sh: line 7: ../execute_sql: No such file or directory
+
+real	0m0.000s
+user	0m0.000s
+sys	0m0.000s
+./tester.sh: line 7: ../execute_sql: No such file or directory
+
+real	0m0.000s
+user	0m0.001s
+sys	0m0.000s
+./tester.sh: line 7: ../execute_sql: No such file or directory
+
+real	0m0.000s
+user	0m0.000s
+sys	0m0.000s
+./tester.sh: line 7: ../execute_sql: No such file or directory
+
+real	0m0.000s
+user	0m0.001s
+sys	0m0.000s
+./tester.sh: line 7: ../execute_sql: No such file or directory
+
+real	0m0.000s
+user	0m0.000s
+sys	0m0.000s
+./tester.sh: line 7: ../execute_sql: No such file or directory
+
+real	0m0.000s
+user	0m0.000s
+sys	0m0.000s
+./tester.sh: line 7: ../execute_sql: No such file or directory
+
+real	0m0.000s
+user	0m0.000s
+sys	0m0.000s
+./tester.sh: line 7: ../execute_sql: No such file or directory
+
+real	0m0.000s
+user	0m0.001s
+sys	0m0.000s
+
+real	0m11.358s
+user	0m0.205s
+sys	0m0.084s
+
+real	0m10.949s
+user	0m0.132s
+sys	0m0.142s
+
+real	0m11.274s
+user	0m0.163s
+sys	0m0.112s
+
+real	0m11.288s
+user	0m0.174s
+sys	0m0.112s
+
+real	0m12.487s
+user	0m0.202s
+sys	0m0.103s
+
+real	0m12.418s
+user	0m0.185s
+sys	0m0.123s
+
+real	0m12.250s
+user	0m0.143s
+sys	0m0.168s
+
+real	0m11.784s
+user	0m0.197s
+sys	0m0.103s
+
+real	0m11.881s
+user	0m0.175s
+sys	0m0.135s
+
+real	0m13.319s
+user	0m0.180s
+sys	0m0.145s
